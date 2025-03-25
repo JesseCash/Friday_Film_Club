@@ -1,0 +1,34 @@
+﻿@page "{id}"
+@model Friday_Film_Club.Pages.MovieDetailsModel
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+@if (Model.Movie != null)
+{
+    <div class="movie-details-container">
+        <div class="poster">
+            <img src="@Model.Movie.Poster" alt="@Model.Movie.Title Poster">
+        </div>
+        <div class="details">
+            <h2>@Model.Movie.Title (@Model.Movie.Year)</h2>
+            <p><strong>Rated:</strong> @Model.Movie.Rated</p>
+            <p><strong>Released:</strong> @Model.Movie.Released</p>
+            <p><strong>Runtime:</strong> @Model.Movie.Runtime</p>
+            <p><strong>Genre:</strong> @Model.Movie.Genre</p>
+            <p><strong>Director:</strong> @Model.Movie.Director</p>
+            <p><strong>Writer:</strong> @Model.Movie.Writer</p>
+            <p><strong>Cast:</strong> @Model.Movie.Actors</p>
+            <p><strong>Plot Summary:</strong> @Model.Movie.Plot</p>
+            <p><strong>Language:</strong> @Model.Movie.Language</p>
+            <p><strong>Country:</strong> @Model.Movie.Country</p>
+            <p><strong>Box Office:</strong> @Model.Movie.BoxOffice</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="centered-message">
+        <h1>Movie details not found.</h1>
+    </div>
+}

@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday Film Club</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <div class="background">
+        <div class="overlay">
+            <h1>Friday Film Club</h1>
+        </div>
+    </div>
+    <script>
+        const images = [
+            '/images/movie1.jpg',
+            '/images/movie2.jpg',
+            '/images/movie3.jpg',
+            '/images/movie4.jpg'
+        ];
+
+        images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    </script>
+</body>
+</html>

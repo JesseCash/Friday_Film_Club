@@ -1,0 +1,33 @@
+﻿@page
+@model Friday_Film_Club.Pages.SearchResultsModel
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<h2>Search Results for "@Model.Query"</h2>
+
+@if (Model.Movies != null && Model.Movies.Any())
+{
+        <div class="movie-cards-container">
+            <div class="row flex-nowrap">
+            @foreach (var movie in Model.Movies)
+            {
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="@movie.Poster" class="card-img-top" alt="@movie.Title">
+                                <div class="card-body">
+                                    <h5 class="card-title">@movie.Title (@movie.Year)</h5>
+                                    <a asp-page="/MovieDetails" asp-route-id="@movie.ImdbID" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+            }
+            </div>
+        </div>
+}
+else
+{
+        <div class="centered-message">
+            <h1>Ooops... We could not find that film.</h1>
+        </div>
+}

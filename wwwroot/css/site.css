@@ -1,0 +1,192 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto; /* Allow the body to grow with content */
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.background {
+    position: fixed; /* Ensure the background stays fixed */
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    animation: slideshow 15s infinite linear;
+}
+
+@keyframes slideshow {
+    0%, 25% {
+        background-image: url('/images/movie1.jpg');
+    }
+
+    25.01%, 50% {
+        background-image: url('/images/movie2.jpg');
+    }
+
+    50.01%, 75% {
+        background-image: url('/images/movie3.jpg');
+    }
+
+    75.01%, 100% {
+        background-image: url('/images/movie4.jpg');
+    }
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 4rem;
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Sends it behind everything */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: backgroundTransition 20s infinite;
+}
+
+footer {
+    background-color: #FFFFFF; /* Dark grey/black footer */
+    color: black; /* Ensure text color is visible */
+    text-align: center;
+    padding: 10px 0; /* Adjust padding to fit the text */
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    line-height: 1.5; /* Adjust line height for better text spacing */
+}
+
+.logo img {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Keeps aspect ratio */
+    max-width: 100%; /* Ensures it doesn't overflow */
+    object-fit: contain; /* Keeps the image fully visible */
+}
+
+.centered-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust this value to position the message vertically */
+    text-align: center;
+}
+
+.movie-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 20px; /* Add padding to the movie cards container */
+    height: calc(100vh - 120px); /* Adjust height to fit between navbar and footer */
+}
+
+    .movie-cards-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for WebKit browsers */
+    }
+
+.movie-cards-container {
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    max-height: 450px; /* Adjust this value to set the maximum height for posters */
+    object-fit: cover;
+}
+
+.navbar {
+    padding: 0.5rem 1rem; /* Adjust padding to revert to original size */
+    line-height: 1.5; /* Adjust line height for better text spacing */
+}
+
+.navbar .container {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+.movie-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.poster {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    margin-right: 20px;
+}
+
+    .poster img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+.details {
+    flex: 2;
+    min-width: 300px;
+}
+
+    .details h2 {
+        margin-top: 0;
+    }
+
+    .details p {
+        margin: 5px 0;
+    }
+
+.centered-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+}
